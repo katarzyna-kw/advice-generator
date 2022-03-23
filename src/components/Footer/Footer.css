@@ -1,0 +1,14 @@
+.attribution { 
+  font-size: 11px; 
+  text-align: center; 
+  color: #fff;
+  margin-top: 50px;
+}
+
+.attribution a { 
+  color: hsl(228, 45%, 73%); 
+}
+
+.attribution a:hover {
+  color: hotpink;
+}
