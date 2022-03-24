@@ -35,13 +35,15 @@
   position: absolute;
   background-color: var(--primary--bright);
   border-radius: 50%;
-  width: 45px;
-  height: 45px;
+  width: 55px;
+  height: 55px;
   top: 475px;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 5px;
+  border: 0px;
+  
 }
 
 

@@ -16,9 +16,9 @@ function Card() {
       <div className="divider">
         <img src={dividerDesktop} alt="divider" />
       </div>
-      <div className="dice">
+      <button className="dice">
         <img src={dice} alt="icon" />
-      </div>
+      </button>
       </div>
     </div>
   )
