@@ -6,6 +6,15 @@
   height: 100vh;
 }
 
+.card--container {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 100px;
+}
+
 .card {
   display: flex;
   flex-flow: column nowrap;
@@ -13,9 +22,9 @@
   align-items: center;
   background-color: var(--neutral--gray);
   border-radius: 10px;
+  width: 90%;
   min-height: 300px;
-  width: 490px;
-  margin-top: 203px;
+  /* margin-top: 203px; */
 }
 
 .card__header {
@@ -37,15 +46,13 @@
   border-radius: 50%;
   width: 55px;
   height: 55px;
-  top: 475px;
+  top: 370px;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 5px;
   border: 0px;
-  
 }
-
 
 .dice:hover {
   box-shadow: rgb(82, 255, 168) 0px 0px 25px 1px;
@@ -55,4 +62,16 @@
 .dice img {
   width: 20px;
   height: 20px;
+}
+
+@media (min-width:768px) {
+  .card {
+    min-height: 300px;
+    width: 490px;
+    /* margin-top: 203px; */
+  }
+
+  .dice {
+    top: 370px;
+  }  
 }

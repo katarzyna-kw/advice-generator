@@ -1,9 +1,21 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import  dividerDesktop from "../../images/pattern-divider-desktop.svg"
-import {dividerMobile} from "../../images/pattern-divider-mobile.svg"
+import dividerMobile from "../../images/pattern-divider-mobile.svg"
 import dice from "../../images/icon-dice.svg"
 
 function Card() {
+
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 550);
+
+  const updateDivider = () => {
+    setIsMobile(window.innerWidth < 550);
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", updateDivider);
+    return () => window.removeEventListener("resize", updateDivider);
+  });
+
   return (
     <div className="card--container">
       <div className='card'>
@@ -14,7 +26,8 @@ function Card() {
         "Advice"
       </h2>
       <div className="divider">
-        <img src={dividerDesktop} alt="divider" />
+        {isMobile && <img src={dividerMobile} alt="divider" />}
+        {!isMobile && <img src={dividerDesktop} alt="divider" />}
       </div>
       <button className="dice">
         <img src={dice} alt="icon" />
