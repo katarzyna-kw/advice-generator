@@ -7,7 +7,6 @@ import './Card.css'
 function Card() {
 
   const [isMobile, setIsMobile] = useState(window.innerWidth < 550);
-  const [error, setError] = useState(null);
   const [advice, setAdvice] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
 
@@ -43,7 +42,7 @@ function Card() {
         </h1>
       </header>
       <h2 className="card__body">
-        "{advice.advice}"
+      “{advice.advice}”
       </h2>
       <div className="divider">
         {isMobile && <img src={dividerMobile} alt="divider" />}
