@@ -9,6 +9,7 @@ function Card() {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 550);
   const [advice, setAdvice] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
+  const [error, setError] = useState(false);
 
   const updateDivider = () => {
     setIsMobile(window.innerWidth < 550);
@@ -29,6 +30,8 @@ function Card() {
     },
     (error) => {
       console.log("ERROR")
+      setError(true);
+
       }
     )
   }, [])
@@ -38,7 +41,9 @@ function Card() {
       <div className='card'>
       <header>
         <h1 className="card__header">
-          Advice #{advice.id}
+          {error 
+            ? "Unable to load. Please try refreshing the page." 
+            : `Advice #${advice.id}`}
         </h1>
       </header>
       <h2 className="card__body">
