@@ -34,7 +34,7 @@ function Card() {
 
       }
     )
-  }, [])
+}, [])
 
   return (
     <div className="card--container">
@@ -53,7 +53,7 @@ function Card() {
         {isMobile && <img src={dividerMobile} alt="divider" />}
         {!isMobile && <img src={dividerDesktop} alt="divider" />}
       </div>
-      <button className="dice">
+      <button className="dice" >
         <img src={dice} alt="icon" />
       </button>
       </div>
