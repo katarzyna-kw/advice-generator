@@ -58,6 +58,11 @@
   cursor: pointer;
 }
 
+.dice:active {
+  background-color: var(--active);
+}
+
+
 .dice img {
   width: 20px;
   height: 20px;

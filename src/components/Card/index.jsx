@@ -20,21 +20,12 @@ function Card() {
   });
 
   useEffect(() => {
-    // fetch("https://api.adviceslip.com/advice")
-    // .then(response => response.json())
-    // .then((result) => {
-    //   console.log("result: ", result.slip)
-    //   setIsLoaded(true);
-    //   setAdvice(result.slip)
-    // },
-    // (error) => {
-    //   console.log("ERROR")
-    // })
     getAdvice()
   }, [])
 
 
   const getAdvice = () => {
+    console.log("click button")
     fetch("https://api.adviceslip.com/advice")
     .then(response => response.json())
     .then((result) => {
