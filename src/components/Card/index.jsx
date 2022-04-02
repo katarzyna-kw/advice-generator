@@ -20,6 +20,21 @@ function Card() {
   });
 
   useEffect(() => {
+    // fetch("https://api.adviceslip.com/advice")
+    // .then(response => response.json())
+    // .then((result) => {
+    //   console.log("result: ", result.slip)
+    //   setIsLoaded(true);
+    //   setAdvice(result.slip)
+    // },
+    // (error) => {
+    //   console.log("ERROR")
+    // })
+    getAdvice()
+  }, [])
+
+
+  const getAdvice = () => {
     fetch("https://api.adviceslip.com/advice")
     .then(response => response.json())
     .then((result) => {
@@ -30,7 +45,7 @@ function Card() {
     (error) => {
       console.log("ERROR")
     })
-  }, [])
+  }
 
 
   return (
@@ -52,7 +67,7 @@ function Card() {
         {isMobile && <img src={dividerMobile} alt="divider" />}
         {!isMobile && <img src={dividerDesktop} alt="divider" />}
       </div>
-      <button className="dice" >
+      <button className="dice" onClick={getAdvice} >
         <img src={dice} alt="icon" />
       </button>
       </div>
