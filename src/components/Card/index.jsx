@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import CardHeader from '../CardHeader'
 import  dividerDesktop from "../../images/pattern-divider-desktop.svg"
 import dividerMobile from "../../images/pattern-divider-mobile.svg"
 import dice from "../../images/icon-dice.svg"
@@ -42,13 +43,7 @@ function Card() {
   return (
     <div className="card--container">
       <div className='card'>
-      <header>
-        <h1 className="card__header">
-          {!isLoaded 
-            ? "Unable to load" 
-            : `Advice #${advice.id}`}
-        </h1>
-      </header>
+      <CardHeader advice={advice} isLoaded={isLoaded} />
       <h2 className="card__body">
         { !isLoaded
         ? "Please try refreshing the page."
