@@ -1,10 +1,10 @@
 import React from 'react'
 
-function CardHeader({advice, isLoaded}) {
+function CardHeader({advice}) {
   return (
     <header>
     <h1 className="card__header">
-      {!isLoaded 
+      {advice.advice == undefined
         ? "Unable to load" 
         : `Advice #${advice.id}`}
     </h1>

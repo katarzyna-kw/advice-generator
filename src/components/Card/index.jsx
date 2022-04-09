@@ -9,7 +9,6 @@ function Card() {
 
   const [isMobile, setIsMobile] = useState(window.innerWidth < 550);
   const [advice, setAdvice] = useState([]);
-  const [isLoaded, setIsLoaded] = useState(false);
 
   const updateDivider = () => {
     setIsMobile(window.innerWidth < 550);
@@ -26,12 +25,10 @@ function Card() {
 
 
   const getAdvice = () => {
-    console.log("click button")
     fetch("https://api.adviceslip.com/advice")
     .then(response => response.json())
     .then((result) => {
       console.log("result: ", result.slip)
-      setIsLoaded(true);
       setAdvice(result.slip)
     },
     (error) => {
@@ -43,19 +40,19 @@ function Card() {
   return (
     <div className="card--container">
       <div className='card'>
-      <CardHeader advice={advice} isLoaded={isLoaded} />
-      <h2 className="card__body">
-        { !isLoaded
-        ? "Please try refreshing the page."
-        : `“${advice.advice}”` }
-      </h2>
-      <div className="divider">
-        {isMobile && <img src={dividerMobile} alt="divider" />}
-        {!isMobile && <img src={dividerDesktop} alt="divider" />}
-      </div>
-      <button className="dice" onClick={getAdvice} >
-        <img src={dice} alt="icon" />
-      </button>
+        <CardHeader advice={advice} />
+        <h2 className="card__body">
+          { advice.advice == undefined
+          ? "Please try refreshing the page."
+          : `“${advice.advice}”` }
+        </h2>
+        <div className="divider">
+          {isMobile && <img src={dividerMobile} alt="divider" />}
+          {!isMobile && <img src={dividerDesktop} alt="divider" />}
+        </div>
+        <button className="dice" onClick={getAdvice} >
+          <img src={dice} alt="icon" />
+        </button>
       </div>
     </div>
   )
