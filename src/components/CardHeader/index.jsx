@@ -4,7 +4,7 @@ function CardHeader({advice}) {
   return (
     <header>
     <h1 className="card__header">
-      {advice.advice == undefined
+      {advice.advice === undefined
         ? "Unable to load" 
         : `Advice #${advice.id}`}
     </h1>

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import CardHeader from '../CardHeader'
+import CardBody from '../CardBody'
 import  dividerDesktop from "../../images/pattern-divider-desktop.svg"
 import dividerMobile from "../../images/pattern-divider-mobile.svg"
 import dice from "../../images/icon-dice.svg"
@@ -41,11 +42,7 @@ function Card() {
     <div className="card--container">
       <div className='card'>
         <CardHeader advice={advice} />
-        <h2 className="card__body">
-          { advice.advice == undefined
-          ? "Please try refreshing the page."
-          : `“${advice.advice}”` }
-        </h2>
+        <CardBody advice={advice} />
         <div className="divider">
           {isMobile && <img src={dividerMobile} alt="divider" />}
           {!isMobile && <img src={dividerDesktop} alt="divider" />}
