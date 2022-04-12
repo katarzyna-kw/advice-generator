@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import CardHeader from '../CardHeader'
 import CardBody from '../CardBody'
-import  dividerDesktop from "../../images/pattern-divider-desktop.svg"
-import dividerMobile from "../../images/pattern-divider-mobile.svg"
+import CardDivider from '../CardDivider'
 import dice from "../../images/icon-dice.svg"
 import './Card.css'
 
@@ -43,10 +42,7 @@ function Card() {
       <div className='card'>
         <CardHeader advice={advice} />
         <CardBody advice={advice} />
-        <div className="divider">
-          {isMobile && <img src={dividerMobile} alt="divider" />}
-          {!isMobile && <img src={dividerDesktop} alt="divider" />}
-        </div>
+        <CardDivider isMobile={isMobile} />
         <button className="dice" onClick={getAdvice} >
           <img src={dice} alt="icon" />
         </button>
