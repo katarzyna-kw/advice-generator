@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import CardHeader from '../CardHeader'
 import CardBody from '../CardBody'
 import CardDivider from '../CardDivider'
-import dice from "../../images/icon-dice.svg"
+import CardButton from '../CardButton'
 import './Card.css'
 
 function Card() {
@@ -43,9 +43,7 @@ function Card() {
         <CardHeader advice={advice} />
         <CardBody advice={advice} />
         <CardDivider isMobile={isMobile} />
-        <button className="dice" onClick={getAdvice} >
-          <img src={dice} alt="icon" />
-        </button>
+        <CardButton getAdvice={getAdvice} />
       </div>
     </div>
   )
