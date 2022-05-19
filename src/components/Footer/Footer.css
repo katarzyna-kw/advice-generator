@@ -10,5 +10,5 @@
 }
 
 .attribution a:hover {
-  color: hotpink;
+  color: var(--primary--bright);
 }
