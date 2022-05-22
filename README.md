@@ -22,7 +22,7 @@ This is a solution to the [Advice generator app challenge on Frontend Mentor](ht
 ### Links
 
 - Solution URL: [https://github.com/katarzyna-kw/advice-generator](https://github.com/katarzyna-kw/advice-generator)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [https://katarzyna-kw.github.io/advice-generator/](https://katarzyna-kw.github.io/advice-generator/)
 
 ## My process
 
