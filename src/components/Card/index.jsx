@@ -29,7 +29,7 @@ function Card() {
 
   return (
     <div className="card--container">
-      <div className='card'>
+      <div className='card' data-testid="card">
         <CardHeader advice={advice} />
         <CardBody advice={advice} />
         <CardDivider />
