@@ -7,17 +7,7 @@ import './Card.css'
 
 function Card() {
 
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 550);
   const [advice, setAdvice] = useState([]);
-
-  const updateDivider = () => {
-    setIsMobile(window.innerWidth < 550);
-  };
-
-  useEffect(() => {
-    window.addEventListener("resize", updateDivider);
-    return () => window.removeEventListener("resize", updateDivider);
-  });
 
   useEffect(() => {
     getAdvice()
@@ -42,7 +32,7 @@ function Card() {
       <div className='card'>
         <CardHeader advice={advice} />
         <CardBody advice={advice} />
-        <CardDivider isMobile={isMobile} />
+        <CardDivider />
         <CardButton getAdvice={getAdvice} />
       </div>
     </div>
